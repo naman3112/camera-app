@@ -10,11 +10,14 @@
 
 <body>
     <video autoplay controls></video>
+    <audio autoplay controls></audio>
     <script>
         let video = document.querySelector("video")
-        let constraints = {video: true}
+        let audio = document.querySelector("audio")
+        let constraints = {video: true, audio: true}
         navigator.mediaDevices.getUserMedia(constraints).then(function(mediaStream){
             video.srcObject=mediaStream;
+            audio.srcObject=mediaStream;
         })
     </script>
 </body>
